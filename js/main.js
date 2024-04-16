@@ -11,8 +11,8 @@ if (nombreProveedor && valorProveedor){
     
 
     let scopeTable = document.createElement("tr"); 
-    scopeTable.innerHTML = `<tr><th scope="row">1</th><td>${nombreProveedor}</td><td>${valorProveedor}</td><td><input type="button" value="Eliminar"></td></tr>`
-   
+    scopeTable.innerHTML = `<tr><th scope="row">1</th><td>${nombreProveedor}</td><td>${valorProveedor}</td><td><input type="button" value="Eliminar" onclick="borrarProveedor(${posProvee})"></td></tr>`
+    scopeTable.classList.add("indxTable"+posProvee+"");
     posProvee++;
     document.getElementsByClassName("tablaProveedores")[0].append(scopeTable)
 }
@@ -31,10 +31,8 @@ function calculoCierre(){
     proveedoresArr.forEach (function(numero){
         totalProv += Number(numero.valorProveedor);
     });
+
     cuadre =  Number(totalProv) + Number(totalBill) + Number(totalTrans) + Number(totalMon);
-    //calculoTotal = Number(totalVentasDia) - totalProv
-    //calculoTotal = Number(calculoTotal) - Number(totalProv);
-    //calculoTotal = Number(calculoTotal) - Number(totalVentasDia);
     diferencia = Number(cuadre) - Number(totalVentasDia)
     document.getElementsByClassName("tirilla")[0].innerHTML = "$" + new Intl.NumberFormat('en-DE').format(totalVentasDia)
     document.getElementsByClassName("cuadre")[0].innerHTML = "$" + new Intl.NumberFormat('en-DE').format(cuadre)
@@ -51,4 +49,11 @@ function calculoCierre(){
     }
     
     document.getElementsByClassName("colorAlerta")[0].append(alerta)
+}
+
+function borrarProveedor(indiceProveedor){
+console.log(indiceProveedor)
+let element = document.getElementsByClassName("indxTable"+indiceProveedor+"")[0];
+element.remove()
+delete(proveedoresArr[indiceProveedor])
 }
