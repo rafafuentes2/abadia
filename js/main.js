@@ -39,4 +39,16 @@ function calculoCierre(){
     document.getElementsByClassName("tirilla")[0].innerHTML = "$" + new Intl.NumberFormat('en-DE').format(totalVentasDia)
     document.getElementsByClassName("cuadre")[0].innerHTML = "$" + new Intl.NumberFormat('en-DE').format(cuadre)
     document.getElementsByClassName("diferencia")[0].innerHTML = "$" + new Intl.NumberFormat('en-DE').format(diferencia)
+    let alerta = document.createElement("div");
+    document.getElementsByClassName("colorAlerta")[0].innerHTML = '';
+    if(diferencia > 0){
+         
+        alerta.innerHTML = `<div class="alert alert-warning" role="alert">Alerta! Esta sobrando dinero en el cierre</div>`
+    }else if(diferencia < 0){
+        alerta.innerHTML = `<div class="alert alert-danger" role="alert">Peligro! Esta esta descuadrado en el cierre y falta plata</div>`
+    } else {
+        alerta.innerHTML = `<div class="alert alert-success" role="alert">Excelente! Esta cuadrado</div>`
+    }
+    
+    document.getElementsByClassName("colorAlerta")[0].append(alerta)
 }
