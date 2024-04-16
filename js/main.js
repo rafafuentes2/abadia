@@ -11,7 +11,7 @@ if (nombreProveedor && valorProveedor){
     
 
     let scopeTable = document.createElement("tr"); 
-    scopeTable.innerHTML = `<tr><th scope="row">1</th><td>${nombreProveedor}</td><td>$${ + new Intl.NumberFormat('en-DE').format(valorProveedor)}</td><td><input type="button" value="Eliminar" onclick="borrarProveedor(${posProvee})"></td></tr>`
+    scopeTable.innerHTML = `<tr><th scope="row">1</th><td>${nombreProveedor}</td><td>$${valorProveedor}</td><td><input type="button" value="Eliminar" onclick="borrarProveedor(${posProvee})"></td></tr>`
     scopeTable.classList.add("indxTable"+posProvee+"");
     posProvee++;
     document.getElementsByClassName("tablaProveedores")[0].append(scopeTable)
