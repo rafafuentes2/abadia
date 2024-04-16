@@ -23,7 +23,6 @@ function calculoCierre(){
     let cuadre;
     let totalProv = 0;
     let diferencia = 0;
-    let totalBase = document.getElementsByClassName("totalBase")[0].value
     let totalMon = document.getElementsByClassName("totalMon")[0].value
     let totalBill = document.getElementsByClassName("totalBill")[0].value
     let totalTrans = document.getElementsByClassName("totalTrans")[0].value
@@ -32,7 +31,7 @@ function calculoCierre(){
     proveedoresArr.forEach (function(numero){
         totalProv += Number(numero.valorProveedor);
     });
-    cuadre =  Number(totalProv) + Number(totalBill) + Number(totalTrans) + Number(totalMon) + Number(totalBase);
+    cuadre =  Number(totalProv) + Number(totalBill) + Number(totalTrans) + Number(totalMon);
     //calculoTotal = Number(totalVentasDia) - totalProv
     //calculoTotal = Number(calculoTotal) - Number(totalProv);
     //calculoTotal = Number(calculoTotal) - Number(totalVentasDia);
