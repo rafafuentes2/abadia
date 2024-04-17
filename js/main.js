@@ -43,7 +43,7 @@ function calculoCierre(){
          
         alerta.innerHTML = `<div class="alert alert-warning" role="alert">Alerta! Esta sobrando dinero en el cierre</div>`
     }else if(diferencia < 0){
-        alerta.innerHTML = `<div class="alert alert-danger" role="alert">Peligro! Esta esta descuadrado en el cierre y falta plata</div>`
+        alerta.innerHTML = `<div class="alert alert-danger" role="alert">Peligro! Esta descuadrado en el cierre y falta plata</div>`
     } else {
         alerta.innerHTML = `<div class="alert alert-success" role="alert">Excelente! Esta cuadrado</div>`
     }
